@@ -1,0 +1,1458 @@
+EESchema Schematic File Version 4
+LIBS:snackymini-keyboard-cache
+EELAYER 26 0
+EELAYER END
+$Descr A3 16535 11693
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L keyboard_parts:SW_PUSH SW1
+U 1 1 5C1C81A0
+P 3600 1800
+F 0 "SW1" H 3600 2055 50  0000 C CNN
+F 1 "SW_PUSH" H 3600 1964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 3600 1800 60  0001 C CNN
+F 3 "" H 3600 1800 60  0000 C CNN
+	1    3600 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D1
+U 1 1 5C1C8290
+P 3300 2200
+F 0 "D1" H 3428 2150 60  0000 L CNN
+F 1 "D" V 3450 2150 60  0001 C CNN
+F 2 "prototype:D_axial" H 3300 2200 60  0001 C CNN
+F 3 "" H 3300 2200 60  0000 C CNN
+	1    3300 2200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3300 1800 3300 2050
+$Comp
+L keyboard_parts:SW_PUSH SW5
+U 1 1 5C1C84A5
+P 4450 1800
+F 0 "SW5" H 4450 2055 50  0000 C CNN
+F 1 "SW_PUSH" H 4450 1964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 4450 1800 60  0001 C CNN
+F 3 "" H 4450 1800 60  0000 C CNN
+	1    4450 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D5
+U 1 1 5C1C84AC
+P 4150 2200
+F 0 "D5" H 4278 2150 60  0000 L CNN
+F 1 "D" V 4300 2150 60  0001 C CNN
+F 2 "prototype:D_axial" H 4150 2200 60  0001 C CNN
+F 3 "" H 4150 2200 60  0000 C CNN
+	1    4150 2200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4150 1800 4150 2050
+$Comp
+L keyboard_parts:SW_PUSH SW9
+U 1 1 5C1C879A
+P 5300 1800
+F 0 "SW9" H 5300 2055 50  0000 C CNN
+F 1 "SW_PUSH" H 5300 1964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 5300 1800 60  0001 C CNN
+F 3 "" H 5300 1800 60  0000 C CNN
+	1    5300 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D9
+U 1 1 5C1C87A1
+P 5000 2200
+F 0 "D9" H 5128 2150 60  0000 L CNN
+F 1 "D" V 5150 2150 60  0001 C CNN
+F 2 "prototype:D_axial" H 5000 2200 60  0001 C CNN
+F 3 "" H 5000 2200 60  0000 C CNN
+	1    5000 2200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5000 1800 5000 2050
+$Comp
+L keyboard_parts:SW_PUSH SW13
+U 1 1 5C1C87A9
+P 6150 1800
+F 0 "SW13" H 6150 2055 50  0000 C CNN
+F 1 "SW_PUSH" H 6150 1964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 6150 1800 60  0001 C CNN
+F 3 "" H 6150 1800 60  0000 C CNN
+	1    6150 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D13
+U 1 1 5C1C87B0
+P 5850 2200
+F 0 "D13" H 5978 2150 60  0000 L CNN
+F 1 "D" V 6000 2150 60  0001 C CNN
+F 2 "prototype:D_axial" H 5850 2200 60  0001 C CNN
+F 3 "" H 5850 2200 60  0000 C CNN
+	1    5850 2200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5850 1800 5850 2050
+$Comp
+L keyboard_parts:SW_PUSH SW16
+U 1 1 5C1C8B79
+P 7000 1800
+F 0 "SW16" H 7000 2055 50  0000 C CNN
+F 1 "SW_PUSH" H 7000 1964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 7000 1800 60  0001 C CNN
+F 3 "" H 7000 1800 60  0000 C CNN
+	1    7000 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D16
+U 1 1 5C1C8B80
+P 6700 2200
+F 0 "D16" H 6828 2150 60  0000 L CNN
+F 1 "D" V 6850 2150 60  0001 C CNN
+F 2 "prototype:D_axial" H 6700 2200 60  0001 C CNN
+F 3 "" H 6700 2200 60  0000 C CNN
+	1    6700 2200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6700 1800 6700 2050
+$Comp
+L keyboard_parts:SW_PUSH SW20
+U 1 1 5C1C8B88
+P 7850 1800
+F 0 "SW20" H 7850 2055 50  0000 C CNN
+F 1 "SW_PUSH" H 7850 1964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 7850 1800 60  0001 C CNN
+F 3 "" H 7850 1800 60  0000 C CNN
+	1    7850 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D20
+U 1 1 5C1C8B8F
+P 7550 2200
+F 0 "D20" H 7678 2150 60  0000 L CNN
+F 1 "D" V 7700 2150 60  0001 C CNN
+F 2 "prototype:D_axial" H 7550 2200 60  0001 C CNN
+F 3 "" H 7550 2200 60  0000 C CNN
+	1    7550 2200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7550 1800 7550 2050
+$Comp
+L keyboard_parts:SW_PUSH SW23
+U 1 1 5C1C8B97
+P 8700 1800
+F 0 "SW23" H 8700 2055 50  0000 C CNN
+F 1 "SW_PUSH" H 8700 1964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 8700 1800 60  0001 C CNN
+F 3 "" H 8700 1800 60  0000 C CNN
+	1    8700 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D23
+U 1 1 5C1C8B9E
+P 8400 2200
+F 0 "D23" H 8528 2150 60  0000 L CNN
+F 1 "D" V 8550 2150 60  0001 C CNN
+F 2 "prototype:D_axial" H 8400 2200 60  0001 C CNN
+F 3 "" H 8400 2200 60  0000 C CNN
+	1    8400 2200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8400 1800 8400 2050
+$Comp
+L keyboard_parts:SW_PUSH SW27
+U 1 1 5C1C8BA6
+P 9550 1800
+F 0 "SW27" H 9550 2055 50  0000 C CNN
+F 1 "SW_PUSH" H 9550 1964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 9550 1800 60  0001 C CNN
+F 3 "" H 9550 1800 60  0000 C CNN
+	1    9550 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D27
+U 1 1 5C1C8BAD
+P 9250 2200
+F 0 "D27" H 9378 2150 60  0000 L CNN
+F 1 "D" V 9400 2150 60  0001 C CNN
+F 2 "prototype:D_axial" H 9250 2200 60  0001 C CNN
+F 3 "" H 9250 2200 60  0000 C CNN
+	1    9250 2200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9250 1800 9250 2050
+$Comp
+L keyboard_parts:SW_PUSH SW30
+U 1 1 5C1C8E51
+P 10400 1800
+F 0 "SW30" H 10400 2055 50  0000 C CNN
+F 1 "SW_PUSH" H 10400 1964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 10400 1800 60  0001 C CNN
+F 3 "" H 10400 1800 60  0000 C CNN
+	1    10400 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D30
+U 1 1 5C1C8E58
+P 10100 2200
+F 0 "D30" H 10228 2150 60  0000 L CNN
+F 1 "D" V 10250 2150 60  0001 C CNN
+F 2 "prototype:D_axial" H 10100 2200 60  0001 C CNN
+F 3 "" H 10100 2200 60  0000 C CNN
+	1    10100 2200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10100 1800 10100 2050
+$Comp
+L keyboard_parts:SW_PUSH SW34
+U 1 1 5C1C8E60
+P 11250 1800
+F 0 "SW34" H 11250 2055 50  0000 C CNN
+F 1 "SW_PUSH" H 11250 1964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 11250 1800 60  0001 C CNN
+F 3 "" H 11250 1800 60  0000 C CNN
+	1    11250 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D34
+U 1 1 5C1C8E67
+P 10950 2200
+F 0 "D34" H 11078 2150 60  0000 L CNN
+F 1 "D" V 11100 2150 60  0001 C CNN
+F 2 "prototype:D_axial" H 10950 2200 60  0001 C CNN
+F 3 "" H 10950 2200 60  0000 C CNN
+	1    10950 2200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10950 1800 10950 2050
+$Comp
+L keyboard_parts:SW_PUSH SW38
+U 1 1 5C1C8E6F
+P 12100 1800
+F 0 "SW38" H 12100 2055 50  0000 C CNN
+F 1 "SW_PUSH" H 12100 1964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 12100 1800 60  0001 C CNN
+F 3 "" H 12100 1800 60  0000 C CNN
+	1    12100 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D38
+U 1 1 5C1C8E76
+P 11800 2200
+F 0 "D38" H 11928 2150 60  0000 L CNN
+F 1 "D" V 11950 2150 60  0001 C CNN
+F 2 "prototype:D_axial" H 11800 2200 60  0001 C CNN
+F 3 "" H 11800 2200 60  0000 C CNN
+	1    11800 2200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	11800 1800 11800 2050
+$Comp
+L keyboard_parts:SW_PUSH SW42
+U 1 1 5C1C8E7E
+P 12950 1800
+F 0 "SW42" H 12950 2055 50  0000 C CNN
+F 1 "SW_PUSH" H 12950 1964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 12950 1800 60  0001 C CNN
+F 3 "" H 12950 1800 60  0000 C CNN
+	1    12950 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D42
+U 1 1 5C1C8E85
+P 12650 2200
+F 0 "D42" H 12778 2150 60  0000 L CNN
+F 1 "D" V 12800 2150 60  0001 C CNN
+F 2 "prototype:D_axial" H 12650 2200 60  0001 C CNN
+F 3 "" H 12650 2200 60  0000 C CNN
+	1    12650 2200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	12650 1800 12650 2050
+$Comp
+L keyboard_parts:SW_PUSH SW2
+U 1 1 5C1CA73D
+P 3600 2750
+F 0 "SW2" H 3600 3005 50  0000 C CNN
+F 1 "SW_PUSH" H 3600 2914 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 3600 2750 60  0001 C CNN
+F 3 "" H 3600 2750 60  0000 C CNN
+	1    3600 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D2
+U 1 1 5C1CA744
+P 3300 3150
+F 0 "D2" H 3428 3100 60  0000 L CNN
+F 1 "D" V 3450 3100 60  0001 C CNN
+F 2 "prototype:D_axial" H 3300 3150 60  0001 C CNN
+F 3 "" H 3300 3150 60  0000 C CNN
+	1    3300 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3300 2750 3300 3000
+$Comp
+L keyboard_parts:SW_PUSH SW6
+U 1 1 5C1CA74C
+P 4450 2750
+F 0 "SW6" H 4450 3005 50  0000 C CNN
+F 1 "SW_PUSH" H 4450 2914 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 4450 2750 60  0001 C CNN
+F 3 "" H 4450 2750 60  0000 C CNN
+	1    4450 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D6
+U 1 1 5C1CA753
+P 4150 3150
+F 0 "D6" H 4278 3100 60  0000 L CNN
+F 1 "D" V 4300 3100 60  0001 C CNN
+F 2 "prototype:D_axial" H 4150 3150 60  0001 C CNN
+F 3 "" H 4150 3150 60  0000 C CNN
+	1    4150 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4150 2750 4150 3000
+$Comp
+L keyboard_parts:SW_PUSH SW10
+U 1 1 5C1CA75B
+P 5300 2750
+F 0 "SW10" H 5300 3005 50  0000 C CNN
+F 1 "SW_PUSH" H 5300 2914 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 5300 2750 60  0001 C CNN
+F 3 "" H 5300 2750 60  0000 C CNN
+	1    5300 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D10
+U 1 1 5C1CA762
+P 5000 3150
+F 0 "D10" H 5128 3100 60  0000 L CNN
+F 1 "D" V 5150 3100 60  0001 C CNN
+F 2 "prototype:D_axial" H 5000 3150 60  0001 C CNN
+F 3 "" H 5000 3150 60  0000 C CNN
+	1    5000 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5000 2750 5000 3000
+$Comp
+L keyboard_parts:SW_PUSH SW14
+U 1 1 5C1CA76A
+P 6150 2750
+F 0 "SW14" H 6150 3005 50  0000 C CNN
+F 1 "SW_PUSH" H 6150 2914 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 6150 2750 60  0001 C CNN
+F 3 "" H 6150 2750 60  0000 C CNN
+	1    6150 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D14
+U 1 1 5C1CA771
+P 5850 3150
+F 0 "D14" H 5978 3100 60  0000 L CNN
+F 1 "D" V 6000 3100 60  0001 C CNN
+F 2 "prototype:D_axial" H 5850 3150 60  0001 C CNN
+F 3 "" H 5850 3150 60  0000 C CNN
+	1    5850 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5850 2750 5850 3000
+$Comp
+L keyboard_parts:SW_PUSH SW17
+U 1 1 5C1CA779
+P 7000 2750
+F 0 "SW17" H 7000 3005 50  0000 C CNN
+F 1 "SW_PUSH" H 7000 2914 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 7000 2750 60  0001 C CNN
+F 3 "" H 7000 2750 60  0000 C CNN
+	1    7000 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D17
+U 1 1 5C1CA780
+P 6700 3150
+F 0 "D17" H 6828 3100 60  0000 L CNN
+F 1 "D" V 6850 3100 60  0001 C CNN
+F 2 "prototype:D_axial" H 6700 3150 60  0001 C CNN
+F 3 "" H 6700 3150 60  0000 C CNN
+	1    6700 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6700 2750 6700 3000
+$Comp
+L keyboard_parts:SW_PUSH SW21
+U 1 1 5C1CA788
+P 7850 2750
+F 0 "SW21" H 7850 3005 50  0000 C CNN
+F 1 "SW_PUSH" H 7850 2914 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 7850 2750 60  0001 C CNN
+F 3 "" H 7850 2750 60  0000 C CNN
+	1    7850 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D21
+U 1 1 5C1CA78F
+P 7550 3150
+F 0 "D21" H 7678 3100 60  0000 L CNN
+F 1 "D" V 7700 3100 60  0001 C CNN
+F 2 "prototype:D_axial" H 7550 3150 60  0001 C CNN
+F 3 "" H 7550 3150 60  0000 C CNN
+	1    7550 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7550 2750 7550 3000
+$Comp
+L keyboard_parts:SW_PUSH SW24
+U 1 1 5C1CA797
+P 8700 2750
+F 0 "SW24" H 8700 3005 50  0000 C CNN
+F 1 "SW_PUSH" H 8700 2914 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 8700 2750 60  0001 C CNN
+F 3 "" H 8700 2750 60  0000 C CNN
+	1    8700 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D24
+U 1 1 5C1CA79E
+P 8400 3150
+F 0 "D24" H 8528 3100 60  0000 L CNN
+F 1 "D" V 8550 3100 60  0001 C CNN
+F 2 "prototype:D_axial" H 8400 3150 60  0001 C CNN
+F 3 "" H 8400 3150 60  0000 C CNN
+	1    8400 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8400 2750 8400 3000
+$Comp
+L keyboard_parts:SW_PUSH SW28
+U 1 1 5C1CA7A6
+P 9550 2750
+F 0 "SW28" H 9550 3005 50  0000 C CNN
+F 1 "SW_PUSH" H 9550 2914 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 9550 2750 60  0001 C CNN
+F 3 "" H 9550 2750 60  0000 C CNN
+	1    9550 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D28
+U 1 1 5C1CA7AD
+P 9250 3150
+F 0 "D28" H 9378 3100 60  0000 L CNN
+F 1 "D" V 9400 3100 60  0001 C CNN
+F 2 "prototype:D_axial" H 9250 3150 60  0001 C CNN
+F 3 "" H 9250 3150 60  0000 C CNN
+	1    9250 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9250 2750 9250 3000
+$Comp
+L keyboard_parts:SW_PUSH SW31
+U 1 1 5C1CA7B5
+P 10400 2750
+F 0 "SW31" H 10400 3005 50  0000 C CNN
+F 1 "SW_PUSH" H 10400 2914 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 10400 2750 60  0001 C CNN
+F 3 "" H 10400 2750 60  0000 C CNN
+	1    10400 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D31
+U 1 1 5C1CA7BC
+P 10100 3150
+F 0 "D31" H 10228 3100 60  0000 L CNN
+F 1 "D" V 10250 3100 60  0001 C CNN
+F 2 "prototype:D_axial" H 10100 3150 60  0001 C CNN
+F 3 "" H 10100 3150 60  0000 C CNN
+	1    10100 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10100 2750 10100 3000
+$Comp
+L keyboard_parts:SW_PUSH SW35
+U 1 1 5C1CA7C4
+P 11250 2750
+F 0 "SW35" H 11250 3005 50  0000 C CNN
+F 1 "SW_PUSH" H 11250 2914 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 11250 2750 60  0001 C CNN
+F 3 "" H 11250 2750 60  0000 C CNN
+	1    11250 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D35
+U 1 1 5C1CA7CB
+P 10950 3150
+F 0 "D35" H 11078 3100 60  0000 L CNN
+F 1 "D" V 11100 3100 60  0001 C CNN
+F 2 "prototype:D_axial" H 10950 3150 60  0001 C CNN
+F 3 "" H 10950 3150 60  0000 C CNN
+	1    10950 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10950 2750 10950 3000
+$Comp
+L keyboard_parts:SW_PUSH SW39
+U 1 1 5C1CA7D3
+P 12100 2750
+F 0 "SW39" H 12100 3005 50  0000 C CNN
+F 1 "SW_PUSH" H 12100 2914 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 12100 2750 60  0001 C CNN
+F 3 "" H 12100 2750 60  0000 C CNN
+	1    12100 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D39
+U 1 1 5C1CA7DA
+P 11800 3150
+F 0 "D39" H 11928 3100 60  0000 L CNN
+F 1 "D" V 11950 3100 60  0001 C CNN
+F 2 "prototype:D_axial" H 11800 3150 60  0001 C CNN
+F 3 "" H 11800 3150 60  0000 C CNN
+	1    11800 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	11800 2750 11800 3000
+$Comp
+L keyboard_parts:SW_PUSH SW43
+U 1 1 5C1CA7E2
+P 12950 2750
+F 0 "SW43" H 12950 3005 50  0000 C CNN
+F 1 "SW_PUSH" H 12950 2914 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 12950 2750 60  0001 C CNN
+F 3 "" H 12950 2750 60  0000 C CNN
+	1    12950 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D43
+U 1 1 5C1CA7E9
+P 12650 3150
+F 0 "D43" H 12778 3100 60  0000 L CNN
+F 1 "D" V 12800 3100 60  0001 C CNN
+F 2 "prototype:D_axial" H 12650 3150 60  0001 C CNN
+F 3 "" H 12650 3150 60  0000 C CNN
+	1    12650 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	12650 2750 12650 3000
+$Comp
+L keyboard_parts:SW_PUSH SW3
+U 1 1 5C1CB3B1
+P 3600 3700
+F 0 "SW3" H 3600 3955 50  0000 C CNN
+F 1 "SW_PUSH" H 3600 3864 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 3600 3700 60  0001 C CNN
+F 3 "" H 3600 3700 60  0000 C CNN
+	1    3600 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D3
+U 1 1 5C1CB3B8
+P 3300 4100
+F 0 "D3" H 3428 4050 60  0000 L CNN
+F 1 "D" V 3450 4050 60  0001 C CNN
+F 2 "prototype:D_axial" H 3300 4100 60  0001 C CNN
+F 3 "" H 3300 4100 60  0000 C CNN
+	1    3300 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3300 3700 3300 3950
+$Comp
+L keyboard_parts:SW_PUSH SW7
+U 1 1 5C1CB3C0
+P 4450 3700
+F 0 "SW7" H 4450 3955 50  0000 C CNN
+F 1 "SW_PUSH" H 4450 3864 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 4450 3700 60  0001 C CNN
+F 3 "" H 4450 3700 60  0000 C CNN
+	1    4450 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D7
+U 1 1 5C1CB3C7
+P 4150 4100
+F 0 "D7" H 4278 4050 60  0000 L CNN
+F 1 "D" V 4300 4050 60  0001 C CNN
+F 2 "prototype:D_axial" H 4150 4100 60  0001 C CNN
+F 3 "" H 4150 4100 60  0000 C CNN
+	1    4150 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4150 3700 4150 3950
+$Comp
+L keyboard_parts:SW_PUSH SW11
+U 1 1 5C1CB3CF
+P 5300 3700
+F 0 "SW11" H 5300 3955 50  0000 C CNN
+F 1 "SW_PUSH" H 5300 3864 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 5300 3700 60  0001 C CNN
+F 3 "" H 5300 3700 60  0000 C CNN
+	1    5300 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D11
+U 1 1 5C1CB3D6
+P 5000 4100
+F 0 "D11" H 5128 4050 60  0000 L CNN
+F 1 "D" V 5150 4050 60  0001 C CNN
+F 2 "prototype:D_axial" H 5000 4100 60  0001 C CNN
+F 3 "" H 5000 4100 60  0000 C CNN
+	1    5000 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5000 3700 5000 3950
+$Comp
+L keyboard_parts:SW_PUSH SW15
+U 1 1 5C1CB3DE
+P 6150 3700
+F 0 "SW15" H 6150 3955 50  0000 C CNN
+F 1 "SW_PUSH" H 6150 3864 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 6150 3700 60  0001 C CNN
+F 3 "" H 6150 3700 60  0000 C CNN
+	1    6150 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D15
+U 1 1 5C1CB3E5
+P 5850 4100
+F 0 "D15" H 5978 4050 60  0000 L CNN
+F 1 "D" V 6000 4050 60  0001 C CNN
+F 2 "prototype:D_axial" H 5850 4100 60  0001 C CNN
+F 3 "" H 5850 4100 60  0000 C CNN
+	1    5850 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5850 3700 5850 3950
+$Comp
+L keyboard_parts:SW_PUSH SW18
+U 1 1 5C1CB3ED
+P 7000 3700
+F 0 "SW18" H 7000 3955 50  0000 C CNN
+F 1 "SW_PUSH" H 7000 3864 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 7000 3700 60  0001 C CNN
+F 3 "" H 7000 3700 60  0000 C CNN
+	1    7000 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D18
+U 1 1 5C1CB3F4
+P 6700 4100
+F 0 "D18" H 6828 4050 60  0000 L CNN
+F 1 "D" V 6850 4050 60  0001 C CNN
+F 2 "prototype:D_axial" H 6700 4100 60  0001 C CNN
+F 3 "" H 6700 4100 60  0000 C CNN
+	1    6700 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6700 3700 6700 3950
+$Comp
+L keyboard_parts:SW_PUSH SW22
+U 1 1 5C1CB3FC
+P 7850 3700
+F 0 "SW22" H 7850 3955 50  0000 C CNN
+F 1 "SW_PUSH" H 7850 3864 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 7850 3700 60  0001 C CNN
+F 3 "" H 7850 3700 60  0000 C CNN
+	1    7850 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D22
+U 1 1 5C1CB403
+P 7550 4100
+F 0 "D22" H 7678 4050 60  0000 L CNN
+F 1 "D" V 7700 4050 60  0001 C CNN
+F 2 "prototype:D_axial" H 7550 4100 60  0001 C CNN
+F 3 "" H 7550 4100 60  0000 C CNN
+	1    7550 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7550 3700 7550 3950
+$Comp
+L keyboard_parts:SW_PUSH SW25
+U 1 1 5C1CB40B
+P 8700 3700
+F 0 "SW25" H 8700 3955 50  0000 C CNN
+F 1 "SW_PUSH" H 8700 3864 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 8700 3700 60  0001 C CNN
+F 3 "" H 8700 3700 60  0000 C CNN
+	1    8700 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D25
+U 1 1 5C1CB412
+P 8400 4100
+F 0 "D25" H 8528 4050 60  0000 L CNN
+F 1 "D" V 8550 4050 60  0001 C CNN
+F 2 "prototype:D_axial" H 8400 4100 60  0001 C CNN
+F 3 "" H 8400 4100 60  0000 C CNN
+	1    8400 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8400 3700 8400 3950
+$Comp
+L keyboard_parts:SW_PUSH SW29
+U 1 1 5C1CB41A
+P 9550 3700
+F 0 "SW29" H 9550 3955 50  0000 C CNN
+F 1 "SW_PUSH" H 9550 3864 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 9550 3700 60  0001 C CNN
+F 3 "" H 9550 3700 60  0000 C CNN
+	1    9550 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D29
+U 1 1 5C1CB421
+P 9250 4100
+F 0 "D29" H 9378 4050 60  0000 L CNN
+F 1 "D" V 9400 4050 60  0001 C CNN
+F 2 "prototype:D_axial" H 9250 4100 60  0001 C CNN
+F 3 "" H 9250 4100 60  0000 C CNN
+	1    9250 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9250 3700 9250 3950
+$Comp
+L keyboard_parts:SW_PUSH SW32
+U 1 1 5C1CB429
+P 10400 3700
+F 0 "SW32" H 10400 3955 50  0000 C CNN
+F 1 "SW_PUSH" H 10400 3864 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 10400 3700 60  0001 C CNN
+F 3 "" H 10400 3700 60  0000 C CNN
+	1    10400 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D32
+U 1 1 5C1CB430
+P 10100 4100
+F 0 "D32" H 10228 4050 60  0000 L CNN
+F 1 "D" V 10250 4050 60  0001 C CNN
+F 2 "prototype:D_axial" H 10100 4100 60  0001 C CNN
+F 3 "" H 10100 4100 60  0000 C CNN
+	1    10100 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10100 3700 10100 3950
+$Comp
+L keyboard_parts:SW_PUSH SW36
+U 1 1 5C1CB438
+P 11250 3700
+F 0 "SW36" H 11250 3955 50  0000 C CNN
+F 1 "SW_PUSH" H 11250 3864 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 11250 3700 60  0001 C CNN
+F 3 "" H 11250 3700 60  0000 C CNN
+	1    11250 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D36
+U 1 1 5C1CB43F
+P 10950 4100
+F 0 "D36" H 11078 4050 60  0000 L CNN
+F 1 "D" V 11100 4050 60  0001 C CNN
+F 2 "prototype:D_axial" H 10950 4100 60  0001 C CNN
+F 3 "" H 10950 4100 60  0000 C CNN
+	1    10950 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10950 3700 10950 3950
+$Comp
+L keyboard_parts:SW_PUSH SW40
+U 1 1 5C1CB447
+P 12100 3700
+F 0 "SW40" H 12100 3955 50  0000 C CNN
+F 1 "SW_PUSH" H 12100 3864 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 12100 3700 60  0001 C CNN
+F 3 "" H 12100 3700 60  0000 C CNN
+	1    12100 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D40
+U 1 1 5C1CB44E
+P 11800 4100
+F 0 "D40" H 11928 4050 60  0000 L CNN
+F 1 "D" V 11950 4050 60  0001 C CNN
+F 2 "prototype:D_axial" H 11800 4100 60  0001 C CNN
+F 3 "" H 11800 4100 60  0000 C CNN
+	1    11800 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	11800 3700 11800 3950
+$Comp
+L keyboard_parts:SW_PUSH SW44
+U 1 1 5C1CB456
+P 12950 3700
+F 0 "SW44" H 12950 3955 50  0000 C CNN
+F 1 "SW_PUSH" H 12950 3864 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 12950 3700 60  0001 C CNN
+F 3 "" H 12950 3700 60  0000 C CNN
+	1    12950 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D44
+U 1 1 5C1CB45D
+P 12650 4100
+F 0 "D44" H 12778 4050 60  0000 L CNN
+F 1 "D" V 12800 4050 60  0001 C CNN
+F 2 "prototype:D_axial" H 12650 4100 60  0001 C CNN
+F 3 "" H 12650 4100 60  0000 C CNN
+	1    12650 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	12650 3700 12650 3950
+$Comp
+L keyboard_parts:SW_PUSH SW4
+U 1 1 5C1CC4DB
+P 3600 4800
+F 0 "SW4" H 3600 5055 50  0000 C CNN
+F 1 "SW_PUSH" H 3600 4964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 3600 4800 60  0001 C CNN
+F 3 "" H 3600 4800 60  0000 C CNN
+	1    3600 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D4
+U 1 1 5C1CC4E2
+P 3300 5200
+F 0 "D4" H 3428 5150 60  0000 L CNN
+F 1 "D" V 3450 5150 60  0001 C CNN
+F 2 "prototype:D_axial" H 3300 5200 60  0001 C CNN
+F 3 "" H 3300 5200 60  0000 C CNN
+	1    3300 5200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3300 4800 3300 5050
+$Comp
+L keyboard_parts:SW_PUSH SW8
+U 1 1 5C1CC4EA
+P 4450 4800
+F 0 "SW8" H 4450 5055 50  0000 C CNN
+F 1 "SW_PUSH" H 4450 4964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 4450 4800 60  0001 C CNN
+F 3 "" H 4450 4800 60  0000 C CNN
+	1    4450 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D8
+U 1 1 5C1CC4F1
+P 4150 5200
+F 0 "D8" H 4278 5150 60  0000 L CNN
+F 1 "D" V 4300 5150 60  0001 C CNN
+F 2 "prototype:D_axial" H 4150 5200 60  0001 C CNN
+F 3 "" H 4150 5200 60  0000 C CNN
+	1    4150 5200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4150 4800 4150 5050
+$Comp
+L keyboard_parts:SW_PUSH SW12
+U 1 1 5C1CC4F9
+P 5300 4800
+F 0 "SW12" H 5300 5055 50  0000 C CNN
+F 1 "SW_PUSH" H 5300 4964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 5300 4800 60  0001 C CNN
+F 3 "" H 5300 4800 60  0000 C CNN
+	1    5300 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D12
+U 1 1 5C1CC500
+P 5000 5200
+F 0 "D12" H 5128 5150 60  0000 L CNN
+F 1 "D" V 5150 5150 60  0001 C CNN
+F 2 "prototype:D_axial" H 5000 5200 60  0001 C CNN
+F 3 "" H 5000 5200 60  0000 C CNN
+	1    5000 5200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5000 4800 5000 5050
+$Comp
+L keyboard_parts:SW_PUSH SW19
+U 1 1 5C1CC517
+P 7000 4800
+F 0 "SW19" H 7000 5055 50  0000 C CNN
+F 1 "SW_PUSH" H 7000 4964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 7000 4800 60  0001 C CNN
+F 3 "" H 7000 4800 60  0000 C CNN
+	1    7000 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D19
+U 1 1 5C1CC51E
+P 6700 5200
+F 0 "D19" H 6828 5150 60  0000 L CNN
+F 1 "D" V 6850 5150 60  0001 C CNN
+F 2 "prototype:D_axial" H 6700 5200 60  0001 C CNN
+F 3 "" H 6700 5200 60  0000 C CNN
+	1    6700 5200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6700 4800 6700 5050
+$Comp
+L keyboard_parts:SW_PUSH SW26
+U 1 1 5C1CC535
+P 8700 4800
+F 0 "SW26" H 8700 5055 50  0000 C CNN
+F 1 "SW_PUSH" H 8700 4964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 8700 4800 60  0001 C CNN
+F 3 "" H 8700 4800 60  0000 C CNN
+	1    8700 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D26
+U 1 1 5C1CC53C
+P 8400 5200
+F 0 "D26" H 8528 5150 60  0000 L CNN
+F 1 "D" V 8550 5150 60  0001 C CNN
+F 2 "prototype:D_axial" H 8400 5200 60  0001 C CNN
+F 3 "" H 8400 5200 60  0000 C CNN
+	1    8400 5200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8400 4800 8400 5050
+$Comp
+L keyboard_parts:SW_PUSH SW37
+U 1 1 5C1CC562
+P 11250 4800
+F 0 "SW37" H 11250 5055 50  0000 C CNN
+F 1 "SW_PUSH" H 11250 4964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 11250 4800 60  0001 C CNN
+F 3 "" H 11250 4800 60  0000 C CNN
+	1    11250 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D37
+U 1 1 5C1CC569
+P 10950 5200
+F 0 "D37" H 11078 5150 60  0000 L CNN
+F 1 "D" V 11100 5150 60  0001 C CNN
+F 2 "prototype:D_axial" H 10950 5200 60  0001 C CNN
+F 3 "" H 10950 5200 60  0000 C CNN
+	1    10950 5200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10950 4800 10950 5050
+$Comp
+L keyboard_parts:SW_PUSH SW41
+U 1 1 5C1CC571
+P 12100 4800
+F 0 "SW41" H 12100 5055 50  0000 C CNN
+F 1 "SW_PUSH" H 12100 4964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 12100 4800 60  0001 C CNN
+F 3 "" H 12100 4800 60  0000 C CNN
+	1    12100 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D41
+U 1 1 5C1CC578
+P 11800 5200
+F 0 "D41" H 11928 5150 60  0000 L CNN
+F 1 "D" V 11950 5150 60  0001 C CNN
+F 2 "prototype:D_axial" H 11800 5200 60  0001 C CNN
+F 3 "" H 11800 5200 60  0000 C CNN
+	1    11800 5200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	11800 4800 11800 5050
+$Comp
+L keyboard_parts:SW_PUSH SW45
+U 1 1 5C1CC580
+P 12950 4800
+F 0 "SW45" H 12950 5055 50  0000 C CNN
+F 1 "SW_PUSH" H 12950 4964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 12950 4800 60  0001 C CNN
+F 3 "" H 12950 4800 60  0000 C CNN
+	1    12950 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:D D45
+U 1 1 5C1CC587
+P 12650 5200
+F 0 "D45" H 12778 5150 60  0000 L CNN
+F 1 "D" V 12800 5150 60  0001 C CNN
+F 2 "prototype:D_axial" H 12650 5200 60  0001 C CNN
+F 3 "" H 12650 5200 60  0000 C CNN
+	1    12650 5200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	12650 4800 12650 5050
+Wire Wire Line
+	10100 4800 10100 5050
+$Comp
+L keyboard_parts:D D33
+U 1 1 5C1CC55A
+P 10100 5200
+F 0 "D33" H 10228 5150 60  0000 L CNN
+F 1 "D" V 10250 5150 60  0001 C CNN
+F 2 "prototype:D_axial" H 10100 5200 60  0001 C CNN
+F 3 "" H 10100 5200 60  0000 C CNN
+	1    10100 5200
+	-1   0    0    1   
+$EndComp
+$Comp
+L keyboard_parts:SW_PUSH SW33
+U 1 1 5C1CC553
+P 10400 4800
+F 0 "SW33" H 10400 5055 50  0000 C CNN
+F 1 "SW_PUSH" H 10400 4964 50  0000 C CNN
+F 2 "prototype:CHERRY_PLATE_100H" H 10400 4800 60  0001 C CNN
+F 3 "" H 10400 4800 60  0000 C CNN
+	1    10400 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12650 5250 11800 5250
+Wire Wire Line
+	11800 5250 10950 5250
+Connection ~ 11800 5250
+Wire Wire Line
+	10950 5250 10100 5250
+Connection ~ 10950 5250
+Wire Wire Line
+	10100 5250 8400 5250
+Connection ~ 10100 5250
+Wire Wire Line
+	8400 5250 6700 5250
+Connection ~ 8400 5250
+Wire Wire Line
+	6700 5250 5000 5250
+Connection ~ 6700 5250
+Wire Wire Line
+	5000 5250 4150 5250
+Connection ~ 5000 5250
+Connection ~ 4150 5250
+Connection ~ 3300 5250
+Wire Wire Line
+	10950 4150 10100 4150
+Connection ~ 10950 4150
+Wire Wire Line
+	10100 4150 9250 4150
+Connection ~ 10100 4150
+Wire Wire Line
+	9250 4150 8400 4150
+Connection ~ 9250 4150
+Wire Wire Line
+	8400 4150 7550 4150
+Connection ~ 8400 4150
+Wire Wire Line
+	7550 4150 6700 4150
+Connection ~ 7550 4150
+Wire Wire Line
+	6700 4150 5850 4150
+Connection ~ 6700 4150
+Wire Wire Line
+	5850 4150 5000 4150
+Connection ~ 5850 4150
+Wire Wire Line
+	5000 4150 4150 4150
+Connection ~ 5000 4150
+Connection ~ 4150 4150
+Connection ~ 3300 4150
+Wire Wire Line
+	10950 4150 11800 4150
+Wire Wire Line
+	12650 4150 11800 4150
+Connection ~ 11800 4150
+Wire Wire Line
+	12650 3200 11800 3200
+Wire Wire Line
+	11800 3200 10950 3200
+Connection ~ 11800 3200
+Wire Wire Line
+	10950 3200 10100 3200
+Connection ~ 10950 3200
+Wire Wire Line
+	10100 3200 9250 3200
+Connection ~ 10100 3200
+Wire Wire Line
+	9250 3200 8400 3200
+Connection ~ 9250 3200
+Connection ~ 8400 3200
+Wire Wire Line
+	6700 3200 7550 3200
+Connection ~ 7550 3200
+Wire Wire Line
+	7550 3200 8400 3200
+Wire Wire Line
+	6700 3200 5850 3200
+Connection ~ 6700 3200
+Wire Wire Line
+	5850 3200 5000 3200
+Connection ~ 5850 3200
+Wire Wire Line
+	5000 3200 4150 3200
+Connection ~ 5000 3200
+Connection ~ 4150 3200
+Connection ~ 3300 3200
+Wire Wire Line
+	12650 2250 11800 2250
+Wire Wire Line
+	11800 2250 10950 2250
+Connection ~ 11800 2250
+Wire Wire Line
+	10950 2250 10100 2250
+Connection ~ 10950 2250
+Wire Wire Line
+	10100 2250 9250 2250
+Connection ~ 10100 2250
+Wire Wire Line
+	9250 2250 8400 2250
+Connection ~ 9250 2250
+Wire Wire Line
+	8400 2250 7550 2250
+Connection ~ 8400 2250
+Wire Wire Line
+	7550 2250 6700 2250
+Connection ~ 7550 2250
+Wire Wire Line
+	6700 2250 5850 2250
+Connection ~ 6700 2250
+Wire Wire Line
+	5850 2250 5000 2250
+Connection ~ 5850 2250
+Wire Wire Line
+	5000 2250 4150 2250
+Connection ~ 5000 2250
+Connection ~ 4150 2250
+Connection ~ 3300 2250
+Wire Wire Line
+	3900 1800 3900 2750
+Wire Wire Line
+	3900 2750 3900 3700
+Connection ~ 3900 2750
+Wire Wire Line
+	3900 3700 3900 4800
+Connection ~ 3900 3700
+Connection ~ 3900 4800
+Wire Wire Line
+	4750 1800 4750 2750
+Wire Wire Line
+	4750 2750 4750 3700
+Connection ~ 4750 2750
+Wire Wire Line
+	4750 3700 4750 4800
+Connection ~ 4750 3700
+Connection ~ 4750 4800
+Wire Wire Line
+	5600 1800 5600 2750
+Wire Wire Line
+	5600 2750 5600 3700
+Connection ~ 5600 2750
+Wire Wire Line
+	5600 3700 5600 4800
+Connection ~ 5600 3700
+Connection ~ 5600 4800
+Wire Wire Line
+	6450 1800 6450 2750
+Wire Wire Line
+	6450 2750 6450 3700
+Connection ~ 6450 2750
+Connection ~ 6450 3700
+Wire Wire Line
+	7300 1800 7300 2750
+Wire Wire Line
+	7300 2750 7300 3700
+Connection ~ 7300 2750
+Wire Wire Line
+	7300 3700 7300 4800
+Connection ~ 7300 3700
+Connection ~ 7300 4800
+Wire Wire Line
+	8150 1800 8150 2750
+Wire Wire Line
+	8150 2750 8150 3700
+Connection ~ 8150 2750
+Connection ~ 8150 3700
+Wire Wire Line
+	9000 1800 9000 2750
+Wire Wire Line
+	9000 2750 9000 3700
+Connection ~ 9000 2750
+Wire Wire Line
+	9000 3700 9000 4800
+Connection ~ 9000 3700
+Connection ~ 9000 4800
+Wire Wire Line
+	9850 1800 9850 2750
+Wire Wire Line
+	9850 2750 9850 3700
+Connection ~ 9850 2750
+Connection ~ 9850 3700
+Wire Wire Line
+	10700 1800 10700 2750
+Wire Wire Line
+	10700 2750 10700 3700
+Connection ~ 10700 2750
+Wire Wire Line
+	10700 3700 10700 4800
+Connection ~ 10700 3700
+Connection ~ 10700 4800
+Wire Wire Line
+	11550 1800 11550 2750
+Wire Wire Line
+	11550 2750 11550 3700
+Connection ~ 11550 2750
+Wire Wire Line
+	11550 3700 11550 4800
+Connection ~ 11550 3700
+Connection ~ 11550 4800
+Wire Wire Line
+	12400 1800 12400 2750
+Wire Wire Line
+	12400 2750 12400 3700
+Connection ~ 12400 2750
+Wire Wire Line
+	12400 3700 12400 4800
+Connection ~ 12400 3700
+Connection ~ 12400 4800
+Wire Wire Line
+	13250 1800 13250 2750
+Wire Wire Line
+	13250 2750 13250 3700
+Connection ~ 13250 2750
+Wire Wire Line
+	13250 3700 13250 4800
+Connection ~ 13250 3700
+Text GLabel 2900 2250 0    50   Input ~ 0
+ROW1
+Text GLabel 2900 3200 0    50   Input ~ 0
+ROW2
+Text GLabel 2950 4150 0    50   Input ~ 0
+ROW3
+Text GLabel 2950 5250 0    50   Input ~ 0
+ROW4
+Text GLabel 3900 5750 3    50   Input ~ 0
+COL1
+Text GLabel 4750 5750 3    50   Input ~ 0
+COL2
+Text GLabel 5600 5750 3    50   Input ~ 0
+COL3
+Text GLabel 6450 5750 3    50   Input ~ 0
+COL4
+Text GLabel 7300 5750 3    50   Input ~ 0
+COL5
+Text GLabel 8150 5750 3    50   Input ~ 0
+COL6
+Text GLabel 9000 5750 3    50   Input ~ 0
+COL7
+Text GLabel 9850 5750 3    50   Input ~ 0
+COL8
+Text GLabel 10700 5750 3    50   Input ~ 0
+COL9
+Text GLabel 11550 5750 3    50   Input ~ 0
+COL10
+Text GLabel 12400 5750 3    50   Input ~ 0
+COL11
+Text GLabel 13250 5750 3    50   Input ~ 0
+COL12
+Wire Wire Line
+	13250 4800 13250 5750
+Connection ~ 13250 4800
+Wire Wire Line
+	12400 4800 12400 5750
+Wire Wire Line
+	11550 4800 11550 5750
+Wire Wire Line
+	10700 4800 10700 5750
+Wire Wire Line
+	9850 3700 9850 5750
+Wire Wire Line
+	9000 4800 9000 5750
+Wire Wire Line
+	8150 3700 8150 5750
+Wire Wire Line
+	7300 4800 7300 5750
+Wire Wire Line
+	6450 3700 6450 5750
+Wire Wire Line
+	5600 4800 5600 5750
+Wire Wire Line
+	4750 4800 4750 5750
+Wire Wire Line
+	3900 4800 3900 5750
+Wire Wire Line
+	2950 5250 3300 5250
+Wire Wire Line
+	2950 4150 3300 4150
+Wire Wire Line
+	2900 3200 3300 3200
+Wire Wire Line
+	2900 2250 3300 2250
+Wire Wire Line
+	4150 2250 3300 2250
+Wire Wire Line
+	4150 3200 3300 3200
+Wire Wire Line
+	4150 4150 3300 4150
+Wire Wire Line
+	4150 5250 3300 5250
+Text GLabel 6850 7300 0    50   Input ~ 0
+ROW1
+Text GLabel 6850 7400 0    50   Input ~ 0
+ROW2
+Text GLabel 6850 7500 0    50   Input ~ 0
+ROW3
+Text GLabel 6850 7600 0    50   Input ~ 0
+ROW4
+$Comp
+L teensy:Teensy3.2 U1
+U 1 1 5C378AD4
+P 8000 8300
+F 0 "U1" H 8000 9993 60  0000 C CNN
+F 1 "Teensy3.2" H 8000 9887 60  0000 C CNN
+F 2 "prototype:TeensySimple" H 8000 9781 60  0000 C CNN
+F 3 "" H 8000 7500 60  0000 C CNN
+	1    8000 8300
+	1    0    0    -1  
+$EndComp
+Text GLabel 6850 7700 0    50   Input ~ 0
+COL1
+Text GLabel 6850 7800 0    50   Input ~ 0
+COL2
+Text GLabel 6850 7900 0    50   Input ~ 0
+COL3
+Text GLabel 6850 8000 0    50   Input ~ 0
+COL4
+Wire Wire Line
+	6850 7300 7000 7300
+Wire Wire Line
+	7000 7400 6850 7400
+Wire Wire Line
+	6850 7500 7000 7500
+Wire Wire Line
+	7000 7600 6850 7600
+Text GLabel 6850 8100 0    50   Input ~ 0
+COL5
+Text GLabel 6850 8900 0    50   Input ~ 0
+COL6
+Text GLabel 6850 9000 0    50   Input ~ 0
+COL7
+Text GLabel 6850 9100 0    50   Input ~ 0
+COL8
+Text GLabel 6850 9200 0    50   Input ~ 0
+COL9
+Text GLabel 6850 9300 0    50   Input ~ 0
+COL10
+Text GLabel 6850 9400 0    50   Input ~ 0
+COL11
+Text GLabel 6850 9500 0    50   Input ~ 0
+COL12
+Wire Wire Line
+	6850 7700 7000 7700
+Wire Wire Line
+	7000 7800 6850 7800
+Wire Wire Line
+	6850 7900 7000 7900
+Wire Wire Line
+	7000 8000 6850 8000
+Wire Wire Line
+	6850 8100 7000 8100
+Wire Wire Line
+	6850 8900 7000 8900
+Wire Wire Line
+	7000 9000 6850 9000
+Wire Wire Line
+	6850 9100 7000 9100
+Wire Wire Line
+	7000 9200 6850 9200
+Wire Wire Line
+	6850 9300 7000 9300
+Wire Wire Line
+	7000 9400 6850 9400
+Wire Wire Line
+	6850 9500 7000 9500
+$EndSCHEMATC
