@@ -15,4 +15,3 @@ PCB:
 PCB render
 
 ![](pcb-front.png)
-![](pcb-back.png)
