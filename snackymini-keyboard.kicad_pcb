@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 671)
+    (drawings 672)
     (tracks 474)
     (zones 0)
     (modules 91)
@@ -3069,6 +3069,9 @@
     (pad HOLE np_thru_hole circle (at 5.08 0) (size 1.7018 1.7018) (drill 1.7018) (layers *.Cu))
   )
 
+  (gr_text "R1 = 2\nR2 = 3\nR3 = 4\nR4 = 5\n\nC1 = 6\nC2 = 7\nC3 = 8\nC4 = 9\nC5 = 10\nC6 = 13\nC7 = 14\nC8 = 15\nC9 = 16\nC10 = 17\nC11 = 18\nC12 = 19" (at 66.421 65.786) (layer F.Cu)
+    (effects (font (size 1.5 1.5) (thickness 0.3)))
+  )
   (gr_line (start 330.962 143.256) (end 73.152 143.256) (layer Edge.Cuts) (width 0.15) (tstamp 5C1F85E3))
   (gr_line (start 330.962 237.236) (end 330.962 143.256) (layer Edge.Cuts) (width 0.15) (tstamp 5C1F85E2))
   (gr_line (start 73.152 143.256) (end 73.152 237.236) (layer Edge.Cuts) (width 0.15) (tstamp 5C1F85E1))
