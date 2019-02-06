@@ -7,12 +7,8 @@
 
 const int ROWS = 4;
 const int COLS = 12;
-const int REGISTER_DELAY = 25;
-const int REPEAT_DELAY = 80;
 const int MAXIMUM_STROKES = 10;
 const int SUPPORTED_STROKES = 6;
-
-int frameSkipCount = 0;
 unsigned long lastFrame = 0;
 
 char refCode[ROWS][COLS] = {
@@ -37,8 +33,6 @@ char refCode[ROWS][COLS] = {
 #define SUPER_KEY 101
 #define CTRL_KEY 30
 #define ALT_KEY 100
-
-int released = 0;
 
 char layout[ROWS][COLS] = {
   { KEY_TILDE, KEY_Q, KEY_W, KEY_E, KEY_R, KEY_T, KEY_Y, KEY_U, KEY_I, KEY_O, KEY_P, KEY_BACKSLASH },
@@ -106,7 +100,6 @@ struct Key* readKey() {
         result[cur].col = col;
         result[cur].code = col * 10 + row;
         if (cur < MAXIMUM_STROKES) cur++;
-        digitalWrite(colPins[col], HIGH);
       }
     }
     pinMode(rowPins[row], INPUT);
@@ -118,8 +111,7 @@ struct Key* readKey() {
 
 void setup()
 {
-  Serial.begin(9600);
-
+  //Serial.begin(9600);
   for (int i = 0; i < ROWS; i++) {
     pinMode(rowPins[i], INPUT);
     digitalWrite(rowPins[i], HIGH);
@@ -194,17 +186,14 @@ void submitLayout(struct Key* keys, char layout[ROWS][COLS]) {
     Keyboard.set_modifier(modifiers);
   }
   Keyboard.send_now();
-  delay(REGISTER_DELAY);
 }
 
 void keySubmit(struct Key* keys) {
   int layoutId = 0;
   for (int i = 0; i < SUPPORTED_STROKES; i++) {
     if (keys[i].code == SHIFT_KEY) {
-      Serial.println("SHIFT LAYOUT");
       layoutId = 1; break;
     } else if (keys[i].code == MENU_KEY || keys[i].code == FN_KEY) {
-      Serial.println("FN LAYOUT");
       layoutId = 2; break;
     }
   }
@@ -220,25 +209,18 @@ void keySubmit(struct Key* keys) {
 void loop()
 {
   unsigned long timeNow = millis();
-  // read every 1 millisecond
-  if (timeNow != lastFrame) {
-    frameSkipCount++;
-    if (frameSkipCount == REGISTER_DELAY) {
-      // Begin process
-      struct Key* keys = readKey();
-      if (keys[0].row != -1 && keys[0].col != -1) {
-        keySubmit(keys);
-      } else {
-        frameSkipCount = 0;
-        Keyboard.releaseAll();
-      }
-      free(keys);
-    }
-    if (frameSkipCount == REPEAT_DELAY) {
-      frameSkipCount = 0;
-      Keyboard.releaseAll();
-    }
-    // record last key state and frame
+  // read every 15 millisecond
+  if (timeNow - lastFrame > 15) {
     lastFrame = timeNow;
+    // Begin process
+    struct Key* keys = readKey();
+    if (keys[0].row != -1 && keys[0].col != -1) {
+      keySubmit(keys);
+    } else {
+      Keyboard.set_modifier(0);
+      Keyboard.set_key1(0);
+      Keyboard.send_now();
+    }
+    free(keys);
   }
 }
