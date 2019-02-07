@@ -35,21 +35,14 @@ char refCode[ROWS][COLS] = {
 #define ALT_KEY 100
 
 char layout[ROWS][COLS] = {
-  { KEY_TILDE, KEY_Q, KEY_W, KEY_E, KEY_R, KEY_T, KEY_Y, KEY_U, KEY_I, KEY_O, KEY_P, KEY_BACKSLASH },
+  { KEY_TAB, KEY_Q, KEY_W, KEY_E, KEY_R, KEY_T, KEY_Y, KEY_U, KEY_I, KEY_O, KEY_P, KEY_BACKSLASH },
   { ' ', KEY_A, KEY_S, KEY_D, KEY_F, KEY_G, KEY_H, KEY_J, KEY_K, KEY_L, KEY_SEMICOLON, ' ' },
   { ' ', KEY_Z, KEY_X, KEY_C, KEY_V, KEY_B, KEY_N, KEY_M, KEY_COMMA, KEY_PERIOD, ' ', KEY_SLASH },
-  { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' }
-};
-
-char layout_shift[ROWS][COLS] = {
-  { KEY_TILDE, KEY_Q, KEY_W, KEY_E, KEY_R, KEY_T, KEY_Y, KEY_U, KEY_I, KEY_O, KEY_P, KEY_BACKSLASH },
-  { ' ', KEY_A, KEY_S, KEY_D, KEY_F, KEY_G, KEY_H, KEY_J, KEY_K, KEY_L, KEY_SEMICOLON, ' ' },
-  { ' ', KEY_Z, KEY_X, KEY_C, KEY_V, KEY_B, KEY_N, KEY_M, KEY_COMMA, KEY_PERIOD, ' ', KEY_SLASH },
-  { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' }
+  { KEY_TILDE, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' }
 };
 
 char layout_fn[ROWS][COLS] = {
-  { KEY_TAB, KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9, KEY_0, KEY_MINUS },
+  { KEY_ESC, KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9, KEY_0, KEY_MINUS },
   { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', KEY_LEFT_BRACE, KEY_RIGHT_BRACE, ' ' },
   { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', KEY_QUOTE, ' ', KEY_EQUAL },
   { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' }
@@ -123,15 +116,6 @@ void setup()
   }
 }
 
-void holdKey(int code) {
-  Keyboard.press(code);
-}
-
-void pressKey(int code) {
-  Keyboard.press(code);
-  Keyboard.release(code);
-}
-
 void submitLayout(struct Key* keys, char layout[ROWS][COLS]) {
   int modifiers = 0;
   Keyboard.set_modifier(0);
@@ -191,17 +175,13 @@ void submitLayout(struct Key* keys, char layout[ROWS][COLS]) {
 void keySubmit(struct Key* keys) {
   int layoutId = 0;
   for (int i = 0; i < SUPPORTED_STROKES; i++) {
-    if (keys[i].code == SHIFT_KEY) {
+    if (keys[i].code == FN_KEY) {
       layoutId = 1; break;
-    } else if (keys[i].code == MENU_KEY || keys[i].code == FN_KEY) {
-      layoutId = 2; break;
     }
   }
   if (layoutId == 0) {
     submitLayout(keys, layout);
   } else if (layoutId == 1) {
-    submitLayout(keys, layout_shift);
-  } else if (layoutId == 2) {
     submitLayout(keys, layout_fn);
   }
 }
