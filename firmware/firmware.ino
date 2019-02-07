@@ -5,48 +5,57 @@
 
 #include <Keyboard.h>
 
-const int ROWS = 4;
-const int COLS = 12;
-const int MAXIMUM_STROKES = 10;
+#define ARROW_UP_KEY    91
+#define ARROW_DOWN_KEY  112
+#define ARROW_LEFT_KEY  111
+#define ARROW_RIGHT_KEY 113
+#define SHIFT_KEY       62
+#define MENU_KEY        93
+#define FN_KEY          110
+#define BACKSPACE_KEY   61
+#define ENTER_KEY       102
+#define TAB_KEY         103
+#define SUPER_KEY       101
+#define CTRL_KEY        30
+#define ALT_KEY         100
+#define NULL_KEY        0x00
+
+#define ROWS           4
+#define COLS           12
+#define DEFAULT_LAYOUT 0
+#define FN_LAYOUT      1
+
+#define MAXIMUM_STROKES   10
+#define DEBOUNCE_DELAY    15
+
 const int SUPPORTED_STROKES = 6;
 unsigned long lastFrame = 0;
 
+// DO NOT EDIT
+// The key code map of the board. I don't know why it's weird.
+// Need to debug some day.
 char refCode[ROWS][COLS] = {
-  { 0, 1, 2, 3, 10, 11, 12, 13, 20, 21, 22, 23 },
-  { 30, 31, 32, 40, 41, 42, 43, 50, 51, 52, 60, 61 },
-  { 62, 63, 70, 71, 72, 80, 81, 82, 83, 90, 91, 92 },
+  { 0 , 1  , 2  , 3  , 10 , 11 , 12 , 13 , 20 , 21 , 22 , 23  },
+  { 30, 31 , 32 , 40 , 41 , 42 , 43 , 50 , 51 , 52 , 60 , 61  },
+  { 62, 63 , 70 , 71 , 72 , 80 , 81 , 82 , 83 , 90 , 91 , 92  },
   { 93, 100, 101, 102, 255, 103, 255, 110, 255, 111, 112, 113 }
 };
 
-#define ARROW_UP_KEY 91
-#define ARROW_DOWN_KEY 112
-#define ARROW_LEFT_KEY 111
-#define ARROW_RIGHT_KEY 113
-#define SHIFT_KEY 62 // trigger layout change
-#define MENU_KEY 93 // trigger layout change
-#define FN_KEY 110 // trigger layout change
-// non combinable modifiers
-#define BACKSPACE_KEY 61
-#define ENTER_KEY 102
-#define TAB_KEY 103
-// combinable modifiers
-#define SUPER_KEY 101
-#define CTRL_KEY 30
-#define ALT_KEY 100
-#define NULL_KEY 0x00
-
-int layout[ROWS][COLS] = {
-  { KEY_TAB, KEY_Q, KEY_W, KEY_E, KEY_R, KEY_T, KEY_Y, KEY_U, KEY_I, KEY_O, KEY_P, KEY_BACKSLASH },
-  { NULL_KEY, KEY_A, KEY_S, KEY_D, KEY_F, KEY_G, KEY_H, KEY_J, KEY_K, KEY_L, KEY_SEMICOLON, NULL_KEY },
-  { NULL_KEY, KEY_Z, KEY_X, KEY_C, KEY_V, KEY_B, KEY_N, KEY_M, KEY_COMMA, KEY_PERIOD, NULL_KEY, KEY_SLASH },
-  { KEY_TILDE, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY }
-};
-
-int layout_fn[ROWS][COLS] = {
-  { KEY_ESC, KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9, KEY_0, KEY_MINUS },
-  { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, KEY_LEFT_BRACE, KEY_RIGHT_BRACE, NULL_KEY },
-  { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, KEY_QUOTE, NULL_KEY, KEY_EQUAL },
-  { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY }
+uint8_t keyLayout[][ROWS][COLS] = {
+  // Default layout
+  {
+    { KEY_TAB  , KEY_Q   , KEY_W   , KEY_E   , KEY_R   , KEY_T   , KEY_Y   , KEY_U   , KEY_I    , KEY_O     , KEY_P        , KEY_BACKSLASH },
+   { NULL_KEY , KEY_A   , KEY_S   , KEY_D   , KEY_F   , KEY_G   , KEY_H   , KEY_J   , KEY_K    , KEY_L     , KEY_SEMICOLON, NULL_KEY      },
+   { NULL_KEY , KEY_Z   , KEY_X   , KEY_C   , KEY_V   , KEY_B   , KEY_N   , KEY_M   , KEY_COMMA, KEY_PERIOD, NULL_KEY     , KEY_SLASH     },
+   { KEY_TILDE, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY , NULL_KEY  , NULL_KEY     , NULL_KEY      }
+  },
+  // Fn layout
+  {
+   { KEY_ESC , KEY_1   , KEY_2   , KEY_3   , KEY_4   , KEY_5   , KEY_6   , KEY_7   , KEY_8   , KEY_9         , KEY_0          , KEY_MINUS },
+   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, KEY_LEFT_BRACE, KEY_RIGHT_BRACE, NULL_KEY  },
+   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, KEY_QUOTE     , NULL_KEY       , KEY_EQUAL },
+   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY      , NULL_KEY       , NULL_KEY  }
+  }
 };
 
 int rowPins[ROWS] = { 23, 22, 21, 20 };
@@ -76,6 +85,7 @@ struct Point keyToPoint(int code) {
   return p;
 }
 
+// Key Scanning Algorithm
 struct Key* readKey() {
   struct Key* result = (Key*)malloc(MAXIMUM_STROKES * sizeof(struct Key));
   for (int i = 0; i < MAXIMUM_STROKES; i++) {
@@ -103,21 +113,7 @@ struct Key* readKey() {
   return result;
 }
 
-void setup()
-{
-  Serial.begin(9600);
-  for (int i = 0; i < ROWS; i++) {
-    pinMode(rowPins[i], INPUT);
-    digitalWrite(rowPins[i], HIGH);
-  }
-  
-  for (int i = 0; i < COLS; i++) {
-    pinMode(colPins[i], INPUT);
-    digitalWrite(colPins[i], HIGH);
-  }
-}
-
-void setKey(int id, int code) {
+void setKey(int id, uint8_t code) {
   switch (id) {
   case 0: Keyboard.set_key1(code); break;
   case 1: Keyboard.set_key2(code); break;
@@ -128,7 +124,7 @@ void setKey(int id, int code) {
   }
 }
 
-void submitLayout(struct Key* keys, int layout[ROWS][COLS]) {
+void submitLayout(struct Key* keys, uint8_t layout[ROWS][COLS]) {
   int modifiers = 0;
   int rolloverCount = 0;
   Keyboard.set_modifier(0);
@@ -136,16 +132,7 @@ void submitLayout(struct Key* keys, int layout[ROWS][COLS]) {
     setKey(i, 0);
   }
   for (int i = 0; i < SUPPORTED_STROKES; i++) {
-    if (keys[i].code == BACKSPACE_KEY) {
-      Keyboard.set_key1(KEY_BACKSPACE);
-    }
-    else if (keys[i].code == TAB_KEY) {
-      Keyboard.set_key1(KEY_SPACE);
-    }
-    else if (keys[i].code == ENTER_KEY) {
-      Keyboard.set_key1(KEY_ENTER);
-    }
-    else if (keys[i].code == SUPER_KEY) {
+    if (keys[i].code == SUPER_KEY) {
       modifiers |= MODIFIERKEY_GUI;
     }
     else if (keys[i].code == CTRL_KEY) {
@@ -156,6 +143,15 @@ void submitLayout(struct Key* keys, int layout[ROWS][COLS]) {
     }
     else if (keys[i].code == SHIFT_KEY) {
       modifiers |= MODIFIERKEY_SHIFT;
+    }
+    else if (keys[i].code == BACKSPACE_KEY) {
+      Keyboard.set_key1(KEY_BACKSPACE);
+    }
+    else if (keys[i].code == TAB_KEY) {
+      Keyboard.set_key1(KEY_SPACE);
+    }
+    else if (keys[i].code == ENTER_KEY) {
+      Keyboard.set_key1(KEY_ENTER);
     }
     else if (keys[i].code == ARROW_UP_KEY) {
       Keyboard.set_key1(KEY_UP);
@@ -187,26 +183,36 @@ void submitLayout(struct Key* keys, int layout[ROWS][COLS]) {
 }
 
 void keySubmit(struct Key* keys) {
-  int layoutId = 0;
+  int layoutId = DEFAULT_LAYOUT;
   for (int i = 0; i < SUPPORTED_STROKES; i++) {
     if (keys[i].code == FN_KEY) {
-      layoutId = 1; break;
+      layoutId = FN_LAYOUT; break;
     }
   }
-  if (layoutId == 0) {
-    submitLayout(keys, layout);
-  } else if (layoutId == 1) {
-    submitLayout(keys, layout_fn);
+  submitLayout(keys, keyLayout[layoutId]);
+}
+
+/* Life Cycle Functions */
+
+void setup()
+{
+  Serial.begin(9600);
+  for (int i = 0; i < ROWS; i++) {
+    pinMode(rowPins[i], INPUT);
+    digitalWrite(rowPins[i], HIGH);
+  }
+  
+  for (int i = 0; i < COLS; i++) {
+    pinMode(colPins[i], INPUT);
+    digitalWrite(colPins[i], HIGH);
   }
 }
 
 void loop()
 {
   unsigned long timeNow = millis();
-  // read every 15 millisecond
-  if (timeNow - lastFrame > 15) {
+  if (timeNow - lastFrame > DEBOUNCE_DELAY) {
     lastFrame = timeNow;
-    // Begin process
     struct Key* keys = readKey();
     if (keys[0].row != -1 && keys[0].col != -1) {
       keySubmit(keys);
