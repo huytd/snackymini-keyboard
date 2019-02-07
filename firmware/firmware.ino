@@ -117,12 +117,25 @@ void setup()
   }
 }
 
+void setKey(int id, int code) {
+  switch (id) {
+  case 0: Keyboard.set_key1(code); break;
+  case 1: Keyboard.set_key2(code); break;
+  case 2: Keyboard.set_key3(code); break;
+  case 3: Keyboard.set_key4(code); break;
+  case 4: Keyboard.set_key5(code); break;
+  case 5: Keyboard.set_key6(code); break;
+  }
+}
+
 void submitLayout(struct Key* keys, int layout[ROWS][COLS]) {
   int modifiers = 0;
+  int rolloverCount = 0;
   Keyboard.set_modifier(0);
-  Keyboard.set_key1(0);
   for (int i = 0; i < SUPPORTED_STROKES; i++) {
-    // non combinable
+    setKey(i, 0);
+  }
+  for (int i = 0; i < SUPPORTED_STROKES; i++) {
     if (keys[i].code == BACKSPACE_KEY) {
       Keyboard.set_key1(KEY_BACKSPACE);
     }
@@ -132,7 +145,6 @@ void submitLayout(struct Key* keys, int layout[ROWS][COLS]) {
     else if (keys[i].code == ENTER_KEY) {
       Keyboard.set_key1(KEY_ENTER);
     }
-    // combinable
     else if (keys[i].code == SUPER_KEY) {
       modifiers |= MODIFIERKEY_GUI;
     }
@@ -161,8 +173,9 @@ void submitLayout(struct Key* keys, int layout[ROWS][COLS]) {
       if (keys[i].code != -1) {
         struct Point pos = keyToPoint(keys[i].code);
         int c = layout[pos.r][pos.c];
-        if (c != 0x00) {
-          Keyboard.set_key1(c);
+        if (c != NULL_KEY) {
+          setKey(rolloverCount, c);
+          rolloverCount++;
         }
       }
     }
@@ -199,7 +212,9 @@ void loop()
       keySubmit(keys);
     } else {
       Keyboard.set_modifier(0);
-      Keyboard.set_key1(0);
+      for (int i = 0; i < SUPPORTED_STROKES; i++) {
+        setKey(i, 0);
+      }
       Keyboard.send_now();
     }
     free(keys);
