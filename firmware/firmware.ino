@@ -33,19 +33,20 @@ char refCode[ROWS][COLS] = {
 #define SUPER_KEY 101
 #define CTRL_KEY 30
 #define ALT_KEY 100
+#define NULL_KEY 0x00
 
-char layout[ROWS][COLS] = {
+int layout[ROWS][COLS] = {
   { KEY_TAB, KEY_Q, KEY_W, KEY_E, KEY_R, KEY_T, KEY_Y, KEY_U, KEY_I, KEY_O, KEY_P, KEY_BACKSLASH },
-  { ' ', KEY_A, KEY_S, KEY_D, KEY_F, KEY_G, KEY_H, KEY_J, KEY_K, KEY_L, KEY_SEMICOLON, ' ' },
-  { ' ', KEY_Z, KEY_X, KEY_C, KEY_V, KEY_B, KEY_N, KEY_M, KEY_COMMA, KEY_PERIOD, ' ', KEY_SLASH },
-  { KEY_TILDE, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' }
+  { NULL_KEY, KEY_A, KEY_S, KEY_D, KEY_F, KEY_G, KEY_H, KEY_J, KEY_K, KEY_L, KEY_SEMICOLON, NULL_KEY },
+  { NULL_KEY, KEY_Z, KEY_X, KEY_C, KEY_V, KEY_B, KEY_N, KEY_M, KEY_COMMA, KEY_PERIOD, NULL_KEY, KEY_SLASH },
+  { KEY_TILDE, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY }
 };
 
-char layout_fn[ROWS][COLS] = {
+int layout_fn[ROWS][COLS] = {
   { KEY_ESC, KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9, KEY_0, KEY_MINUS },
-  { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', KEY_LEFT_BRACE, KEY_RIGHT_BRACE, ' ' },
-  { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', KEY_QUOTE, ' ', KEY_EQUAL },
-  { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' }
+  { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, KEY_LEFT_BRACE, KEY_RIGHT_BRACE, NULL_KEY },
+  { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, KEY_QUOTE, NULL_KEY, KEY_EQUAL },
+  { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY }
 };
 
 int rowPins[ROWS] = { 23, 22, 21, 20 };
@@ -104,7 +105,7 @@ struct Key* readKey() {
 
 void setup()
 {
-  //Serial.begin(9600);
+  Serial.begin(9600);
   for (int i = 0; i < ROWS; i++) {
     pinMode(rowPins[i], INPUT);
     digitalWrite(rowPins[i], HIGH);
@@ -116,7 +117,7 @@ void setup()
   }
 }
 
-void submitLayout(struct Key* keys, char layout[ROWS][COLS]) {
+void submitLayout(struct Key* keys, int layout[ROWS][COLS]) {
   int modifiers = 0;
   Keyboard.set_modifier(0);
   Keyboard.set_key1(0);
@@ -159,8 +160,8 @@ void submitLayout(struct Key* keys, char layout[ROWS][COLS]) {
     else {
       if (keys[i].code != -1) {
         struct Point pos = keyToPoint(keys[i].code);
-        char c = layout[pos.r][pos.c];
-        if (c != ' ') {
+        int c = layout[pos.r][pos.c];
+        if (c != 0x00) {
           Keyboard.set_key1(c);
         }
       }
