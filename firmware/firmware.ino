@@ -44,17 +44,17 @@ char refCode[ROWS][COLS] = {
 uint8_t keyLayout[][ROWS][COLS] = {
   // Default layout
   {
-    { KEY_TAB  , KEY_Q   , KEY_W   , KEY_E   , KEY_R   , KEY_T   , KEY_Y   , KEY_U   , KEY_I    , KEY_O     , KEY_P        , KEY_BACKSLASH },
+   { KEY_TAB  , KEY_Q   , KEY_W   , KEY_E   , KEY_R   , KEY_T   , KEY_Y   , KEY_U   , KEY_I    , KEY_O     , KEY_P        , KEY_BACKSLASH },
    { NULL_KEY , KEY_A   , KEY_S   , KEY_D   , KEY_F   , KEY_G   , KEY_H   , KEY_J   , KEY_K    , KEY_L     , KEY_SEMICOLON, NULL_KEY      },
    { NULL_KEY , KEY_Z   , KEY_X   , KEY_C   , KEY_V   , KEY_B   , KEY_N   , KEY_M   , KEY_COMMA, KEY_PERIOD, NULL_KEY     , KEY_SLASH     },
    { KEY_TILDE, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY , NULL_KEY  , NULL_KEY     , NULL_KEY      }
   },
   // Fn layout
   {
-   { KEY_ESC , KEY_1   , KEY_2   , KEY_3   , KEY_4   , KEY_5   , KEY_6   , KEY_7   , KEY_8   , KEY_9         , KEY_0          , KEY_MINUS },
-   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, KEY_LEFT_BRACE, KEY_RIGHT_BRACE, NULL_KEY  },
+   { KEY_ESC , KEY_1   , KEY_2   , KEY_3   , KEY_4   , KEY_5   , KEY_6   , KEY_7   , KEY_8    , KEY_9         , KEY_0          , KEY_MINUS },
+   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY , KEY_LEFT_BRACE, KEY_RIGHT_BRACE, NULL_KEY  },
    { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, KEY_QUOTE, KEY_QUOTE     , NULL_KEY       , KEY_EQUAL },
-   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY      , NULL_KEY       , NULL_KEY  }
+   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY , NULL_KEY      , NULL_KEY       , NULL_KEY  }
   }
 };
 
