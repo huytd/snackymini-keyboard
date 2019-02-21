@@ -5,6 +5,9 @@
 
 #include <Keyboard.h>
 
+// Comment this out to use QWERTY layout
+#define USE_DVORAK
+
 #define ARROW_UP_KEY    91
 #define ARROW_DOWN_KEY  112
 #define ARROW_LEFT_KEY  111
@@ -41,6 +44,7 @@ char refCode[ROWS][COLS] = {
   { 93, 100, 101, 102, 255, 103, 255, 110, 255, 111, 112, 113 }
 };
 
+#ifndef USE_DVORAK
 uint8_t keyLayout[][ROWS][COLS] = {
   // Default layout
   {
@@ -57,6 +61,24 @@ uint8_t keyLayout[][ROWS][COLS] = {
    { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY , NULL_KEY      , NULL_KEY       , NULL_KEY  }
   }
 };
+#else
+uint8_t keyLayout[][ROWS][COLS] = {
+  // Default layout
+  {
+   { KEY_TAB  , KEY_QUOTE    , KEY_COMMA, KEY_PERIOD, KEY_P   , KEY_Y   , KEY_F   , KEY_G   , KEY_C   , KEY_R   , KEY_L   , KEY_BACKSLASH },
+   { NULL_KEY , KEY_A        , KEY_O    , KEY_E     , KEY_U   , KEY_I   , KEY_D   , KEY_H   , KEY_T   , KEY_N   , KEY_S   , NULL_KEY      },
+   { NULL_KEY , KEY_SEMICOLON, KEY_Q    , KEY_J     , KEY_K   , KEY_X   , KEY_B   , KEY_M   , KEY_W   , KEY_V   , NULL_KEY, KEY_Z         },
+   { KEY_TILDE, NULL_KEY     , NULL_KEY , NULL_KEY  , NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY      }
+  },
+  // Fn layout
+  {
+   { KEY_ESC , KEY_1   , KEY_2   , KEY_3   , KEY_4   , KEY_5   , KEY_6   , KEY_7   , KEY_8    , KEY_9         , KEY_0          , KEY_MINUS },
+   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY , KEY_LEFT_BRACE, KEY_RIGHT_BRACE, NULL_KEY  },
+   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY , NULL_KEY      , NULL_KEY       , KEY_EQUAL },
+   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY , NULL_KEY      , NULL_KEY       , NULL_KEY  }
+  }
+};
+#endif
 
 int rowPins[ROWS] = { 23, 22, 21, 20 };
 int colPins[COLS] = { 19, 18, 17, 16, 15, 12, 11, 10, 9, 8, 7, 6 };
