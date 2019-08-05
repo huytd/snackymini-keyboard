@@ -6,7 +6,7 @@
 #include <Keyboard.h>
 
 // Comment this out to use QWERTY layout
-#define USE_DVORAK
+//#define USE_DVORAK
 
 #define ARROW_UP_KEY    91
 #define ARROW_DOWN_KEY  112
@@ -22,6 +22,10 @@
 #define CTRL_KEY        30
 #define ALT_KEY         100
 #define NULL_KEY        0x00
+
+#ifndef KEY_BACKTICK
+#define KEY_BACKTICK 53
+#endif
 
 #define ROWS           4
 #define COLS           12
@@ -45,23 +49,25 @@ char refCode[ROWS][COLS] = {
 };
 
 #ifndef USE_DVORAK
+// QWERTY LAYOUT
 uint8_t keyLayout[][ROWS][COLS] = {
   // Default layout
   {
    { KEY_TAB  , KEY_Q   , KEY_W   , KEY_E   , KEY_R   , KEY_T   , KEY_Y   , KEY_U   , KEY_I    , KEY_O     , KEY_P        , KEY_BACKSLASH },
    { NULL_KEY , KEY_A   , KEY_S   , KEY_D   , KEY_F   , KEY_G   , KEY_H   , KEY_J   , KEY_K    , KEY_L     , KEY_SEMICOLON, NULL_KEY      },
-   { NULL_KEY , KEY_Z   , KEY_X   , KEY_C   , KEY_V   , KEY_B   , KEY_N   , KEY_M   , KEY_COMMA, KEY_PERIOD, NULL_KEY     , KEY_SLASH     },
-   { KEY_TILDE, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY , NULL_KEY  , NULL_KEY     , NULL_KEY      }
+   { NULL_KEY , KEY_Z   , KEY_X   , KEY_C   , KEY_V   , KEY_B   , KEY_N   , KEY_M   , KEY_COMMA, KEY_PERIOD, KEY_SLASH     , KEY_MINUS     },
+   { KEY_QUOTE, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY , KEY_LEFT_BRACE  , KEY_RIGHT_BRACE     , KEY_EQUAL      }
   },
   // Fn layout
   {
-   { KEY_ESC , KEY_1   , KEY_2   , KEY_3   , KEY_4   , KEY_5   , KEY_6   , KEY_7   , KEY_8    , KEY_9         , KEY_0          , KEY_MINUS },
-   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY , KEY_LEFT_BRACE, KEY_RIGHT_BRACE, NULL_KEY  },
-   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, KEY_QUOTE, KEY_QUOTE     , NULL_KEY       , KEY_EQUAL },
-   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY , NULL_KEY      , NULL_KEY       , NULL_KEY  }
+   { KEY_TILDE , KEY_1   , KEY_2   , KEY_3   , KEY_4   , KEY_5   , KEY_6   , KEY_7   , KEY_8    , KEY_9         , KEY_0          , KEY_BACKTICK },
+   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY , NULL_KEY, NULL_KEY, NULL_KEY  },
+   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY     , KEY_UP       , NULL_KEY },
+   { NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY, NULL_KEY , KEY_LEFT      , KEY_DOWN       , KEY_RIGHT  }
   }
 };
 #else
+// DVORAK LAYOUT
 uint8_t keyLayout[][ROWS][COLS] = {
   // Default layout
   {
@@ -154,6 +160,20 @@ void submitLayout(struct Key* keys, uint8_t layout[ROWS][COLS]) {
     setKey(i, 0);
   }
   for (int i = 0; i < SUPPORTED_STROKES; i++) {
+    #ifdef USE_DVORAK
+    if (keys[i].code == ARROW_UP_KEY) {
+      Keyboard.set_key1(KEY_UP);
+    }
+    else if (keys[i].code == ARROW_DOWN_KEY) {
+      Keyboard.set_key1(KEY_DOWN);
+    }
+    else if (keys[i].code == ARROW_LEFT_KEY) {
+      Keyboard.set_key1(KEY_LEFT);
+    }
+    else if (keys[i].code == ARROW_RIGHT_KEY) {
+      Keyboard.set_key1(KEY_RIGHT);
+    }
+    #endif
     if (keys[i].code == SUPER_KEY) {
       modifiers |= MODIFIERKEY_GUI;
     }
@@ -174,18 +194,6 @@ void submitLayout(struct Key* keys, uint8_t layout[ROWS][COLS]) {
     }
     else if (keys[i].code == ENTER_KEY) {
       Keyboard.set_key1(KEY_ENTER);
-    }
-    else if (keys[i].code == ARROW_UP_KEY) {
-      Keyboard.set_key1(KEY_UP);
-    }
-    else if (keys[i].code == ARROW_DOWN_KEY) {
-      Keyboard.set_key1(KEY_DOWN);
-    }
-    else if (keys[i].code == ARROW_LEFT_KEY) {
-      Keyboard.set_key1(KEY_LEFT);
-    }
-    else if (keys[i].code == ARROW_RIGHT_KEY) {
-      Keyboard.set_key1(KEY_RIGHT);
     }
     else {
       if (keys[i].code != -1) {
